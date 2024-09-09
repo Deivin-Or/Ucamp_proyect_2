@@ -65,6 +65,7 @@ print("""
 print("""Soy Toto y seré su calculador el día de hoy, muchogusto de trabajar contigo.""")
 
 
+
 while True:
     num_dot = int(input("""Para empezar Toto necesita saber:
     ¿Cuántos puntos va a procesar?: """))
