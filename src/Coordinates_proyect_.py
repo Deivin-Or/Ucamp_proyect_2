@@ -78,6 +78,7 @@ while True:
         break
     
 
+
 # Lista que contendran los resultados
 x_coords = []
 y_coords = []
