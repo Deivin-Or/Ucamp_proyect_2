@@ -76,6 +76,7 @@ while True:
     else:
         num_dot = int(num_dot)
         break
+    
 
 # Lista que contendran los resultados
 x_coords = []
