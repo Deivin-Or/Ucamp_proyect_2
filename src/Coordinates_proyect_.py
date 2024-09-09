@@ -4,7 +4,7 @@
 import matplotlib.pyplot as graf
 
 # Bienvenida al usuario
-# Y presentación de mascota Toronto
+# Y presentación de mascota Toto
 welcome = "Bienvenido a la calculadora de coordenadas"
 print(welcome.capitalize())
 print("""
