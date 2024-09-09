@@ -162,4 +162,5 @@ for result_list in range(num_dot):
     print(f"""Punto {result_list + 1}: Coordenadas ({x_coords[result_list]}, {y_coords[result_list]}) - {result[result_list]}\n
 ------------------------------------------------------------------------------------------------------------""")
 
+# Despedida Final
 print("\nToto ha terminado su trabajo, muchas gracias por visitarlo hasta la próxima")
