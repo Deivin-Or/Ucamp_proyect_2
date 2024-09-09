@@ -5,80 +5,23 @@ import matplotlib.pyplot as graf
 
 # Bienvenida al usuario
 welcome = "Bienvenido a la calculadora de coordenadas"
-print(welcome.capitalize)
-print("""
-                                                ..-+*%%@@%#+-.                                      
-                                          .-#@@@@%%#*+===++*#%@@@@@+:.                              
-                                    ...+%@@%+:...             ....-*@@@#:.                          
-                                   :@@@@:.                          ...#@@@:.                       
-                               .-@@@+.                                   .#@@@:                     
-                            ..*@@+...                            ...-*%@@@@@@@@*..                  
-                           .@@@:.                            .+%@@@@@@@@@@@@@--@@-                  
-                        ..%@%.                       .:-#@@@@@@@@@@@@@@@@@@@#-..*@#.                
-                       .#@%:.               ...:=#%@@@@#=%@..%*@@@@@@@@@@@@@..  .-@%.               
-                      -@@-.              :*@@@@@@@@@@@@%**.=@=:=.%@@@@@@@@%       =@*               
-                    .#@#.       ..:+%@@@@@@@@@@@@@@@@@@%@@@@..@@#@@@@@@@@=         %@.              
-                   .@@- ...:+#@@@@@@-=@@@@@@@@@@@@@@%...:-=@@@@@@@@@@%*=:.         #@-              
-                 .:@@=#@@@@@#@@@+.##*@:.%@@@@@@@@@@+..    ...@@#-...               %@.              
-                .-@@+#=..   .=:@@@@-+::@*.*@@@@@@@+:                              #@+               
-               .-@@@@.         ..+@@@%@@@@@@@@@@@#-                            .-@@=.               
-               -@@.                .*=@@@@@*:...                              .%@#.                 
-              .@@.                   ...                                    .#@%.                   
-             .%@-.                                                       ..#@@:.                    
-            .*@+.                                                     ..*@@%..                      
-            :@%.                                                  ..=@@@%@%                         
-           .@@:.                                              ..+%@@%=.. +@+.                       
-           -@#.                                           .:#@@@%-..     .@@.                       
-          .@@.           ..                          .:+@@@@#:            -@#.                      
-          =@#.          -@*.                 ...:=#@@@@*-...              .%@:.                     
-          #@..          .*@%:            .-*%@@@@%=:.                      :@@.                     
-         :@%              .#@@@@@@@@@@@@@@@#=..                             #@=.                    
-         *@+                .....::......                                   .@@.                    
-         %@.                                                                .+@*.                   
-       ..@#                                                                  .%@.                   
-       .+@+                                        =%%+-..                   .=@#.                  
-       .%@-                                        %@@@@@:      :#%*.         .%@.                  
-       .@@.                                        .%@@@@@:.=@@@@@@@.          -@%.                 
-      ..@%.                                          .=@@@@@@@@@@@%:.          .%@:                 
-      .:@*                                            .@@@@@@@@@*              .:@%.                
-      .+@=          *@=                          ..:#@@@@@@@@@@@@               .@@-                
-      .#@-          #@.                    ..:=#@@@%*-.:@@@@@@@@:               ..@#.               
-      .@@:          *@=               ..=#%@@@%=:.      ..+@@@@@.                 %@-               
-      .@@.           #@@+.......-*@@@@@@@+.                                       -@#               
-      .@@.           ..=#%@@@@%%#*=:...                                            %@:              
-      :@@.                                                                         =@#              
-      :@#                                                                           @@..            
-     .-@*                                                                           +@=.            
-     .-@+                                                                           :@@.            
-     .=@=                                                                           .%@..           
-     .+@-                                                                            =@+.           
-     .*@:                                                                            :@@.           
-     .*@:                                                                            .@@:           
-     .#@.                                                                             #@-.          
-     .%@.                                                                             +@=.          
-     .@@.                                                                             =@+.          
-     .@@.                                                                             +@=.          
-     .@@.                                                                            .%@:           
-      ...                                                                             ...           
-                                                                                            """)
-
+print(welcome.capitalize())
 print("""Soy Toto y seré su calculador el día de hoy, muchogusto de trabajar contigo.""")
 
-
-
 while True:
-    num_dot = int(input("""Para empezar Toto necesita saber:
-    ¿Cuántos puntos va a procesar?: """))
-    if num_dot == 0:
-        print("Toto no puede trabajar con un valor nulo")
-    elif num_dot.isalpha():
+    num_dot = input("""Para empezar Toto necesita saber:
+    ¿Cuántos puntos va a procesar?: """)
+    if num_dot.isalpha():
         print("Toto no necesita el alfabeto por el momento")
-    elif all (num_dot.coun(".") > 1 or num_dot.count("-") > 1):
-        print("Toto no puede trabajar con decimales o negativos")
+    elif not num_dot.isdigit():
+        print("Toto solo acepta valores númericos")
+    elif (num_dot.count(".") >= 1) or (num_dot <= ("0")):
+        print("Toto no puede trabajar con decimales, negativos o mixtos")
+    elif int(num_dot) == 0:
+        print("Toto no puede trabajar con un valor nulo")
     else:
         num_dot = int(num_dot)
         break
-
 
 # Lista que contendran los resultados
 x_coords = []
@@ -142,7 +85,7 @@ for position_dot in range(num_dot):
         dot_color.append("blue")
 
 
-# Creación del gráfico
+# # Creación del gráfico
 fig, ax = graf.subplots()
 ax.axhline(0, color = "black", linewidth=1)  # Eje X
 ax.axvline(0, color = "black", linewidth=1)  # Eje Y
@@ -159,3 +102,6 @@ for x_axis, y_axis, result, color in zip(x_coords, y_coords, result, dot_color):
 
 # Mostrar el gráfico
 graf.show()
+
+
+print("Toto ha terminado su trabajo, muchas gracias por usarlo.")
